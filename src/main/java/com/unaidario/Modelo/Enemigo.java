@@ -252,10 +252,15 @@ public class Enemigo extends Entidad {
                 /*A la hora de comprobar si el ataque es mortal, si no lo es, el ataque se realiza
                  * automáticamente, si no, este if esta preparado para eliminar esta entidad
                  */
-                if(entidades.get(posicionProta).ataqueFatal(ataque)){
-                    entidades.get(posicionProta).setVida(0); 
+                if(tipo ==5){
+                    entidades.get(posicionProta).sanar(ataque);//el ataque en el curandero representa la vida sanada que puede darle al prota
                 }
+                else{
 
+                    if(entidades.get(posicionProta).ataqueFatal(ataque)){
+                        entidades.get(posicionProta).setVida(0); 
+                    }
+                }
 
             }
 
@@ -310,6 +315,21 @@ public class Enemigo extends Entidad {
         }
         return posicion;
     }
+
+    /*
+     * Opción A - Nuevo enemigo
+Crea la clase Sanador a partir de Enemigo. 
+Este nuevo personaje funcionará de manera identica a como lo hacen los enemigos, con una excepción. 
+El sanador, en lugar de atacar al jugador, restaurarán una parte de su salud perdida, sin sobrepasar los puntos de vida máximos del jugador. 
+
+
+A la hora de integrarlo en la aplicación se permite, si el desarrollador lo considera oportuno, 
+hardcodear la llamada al constructor, es decir, no es necesario utilizar un fichero para la carga de los Sanadores.
+
+Voy a tener en cuenta que 
+     */
+
+
 
 
 }

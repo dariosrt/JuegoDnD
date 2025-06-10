@@ -146,4 +146,13 @@ public class Entidad implements Comparable<Entidad> {
             return false;
         }
     }
+
+    public void sanar(int vidaSanada){
+        if(vidaSanada+vida >20){
+            vida=20;
+        }
+        else{
+            vida+= vidaSanada;
+        }
+    }
 }
